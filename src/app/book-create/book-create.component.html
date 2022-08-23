@@ -1,0 +1,96 @@
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+  crossorigin="anonymous"
+/>
+
+<div
+  *ngIf="isSubmitted"
+  class="alert alert-success alert-dismissible"
+  role="alert"
+  style="margin-top: 15px"
+>
+  Book added to database — check it out!
+  <button
+    (click)="closeAlert()"
+    type="button"
+    class="close"
+    data-dismiss="alert"
+    aria-label="Close"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div class="form-container">
+  <form [formGroup]="form" (ngSubmit)="createBook()" novalidate>
+    <div class="form-group">
+      <label for="bookName">Book Title</label>
+      <input
+        type="text"
+        class="form-control"
+        name="bookName"
+        aria-describedby="emailHelp"
+        placeholder="Enter Book Title"
+        formControlName="title"
+      />
+    </div>
+    <div class="form-group">
+      <label for="bookAuthor">Book Author</label>
+      <input
+        type="text"
+        class="form-control"
+        name="bookAuthor"
+        placeholder="Enter Book Author"
+        formControlName="author"
+      />
+    </div>
+    <div class="form-group">
+      <label for="isbn">ISBN Number</label>
+      <input
+        type="text"
+        class="form-control"
+        name="isbn"
+        placeholder="Enter ISBN Number"
+        formControlName="isbn"
+      />
+    </div>
+    <div class="form-group">
+      <label for="noOfPages">No of Pages</label>
+      <input
+        type="text"
+        class="form-control"
+        name="noOfPages"
+        placeholder="Enter number of pages"
+        formControlName="pages"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="price">Price</label>
+      <input
+        type="text"
+        class="form-control"
+        name="price"
+        placeholder="Enter the price"
+        formControlName="price"
+      />
+    </div>
+
+    <button
+      type="submit"
+      [disabled]="!form.valid"
+      class="btn btn-primary btn-lg btn-block"
+    >
+      Add the Book
+    </button>
+    <button
+      type="button"
+      routerLink="../list"
+      class="btn btn-secondary btn-lg btn-block"
+    >
+      Back
+    </button>
+  </form>
+</div>

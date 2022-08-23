@@ -1,0 +1,55 @@
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+  crossorigin="anonymous"
+/>
+<div class="add-container">
+  <button
+    routerLink="/create"
+    type="button"
+    class="btn btn-primary btn-lg btn-block"
+  >
+    Add a Book
+  </button>
+</div>
+
+<div class="table-container">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Book Title</th>
+        <th scope="col">Author</th>
+        <th scope="col">ISBN Number</th>
+        <th scope="col">No of Pages</th>
+        <th scope="col">Price</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of bookList">
+        <td>{{ book.title | titlecase }}</td>
+        <td>{{ book.author }}</td>
+        <td>{{ book.isbn_number }}</td>
+        <td>{{ book.no_of_pages }}</td>
+        <td>{{ book.price | currency: "USD" }}</td>
+        <td>
+          <button
+            routerLink="../update/{{ book.id }}"
+            type="button"
+            class="btn btn-success"
+          >
+            Update
+          </button>
+          <button
+            type="button"
+            class="btn btn-danger"
+            (click)="deleteBook(book.id)"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
