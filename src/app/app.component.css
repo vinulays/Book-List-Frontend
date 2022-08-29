@@ -9,3 +9,12 @@ h1 {
   margin: auto;
   margin-top: 30px;
 }
+
+a:hover {
+  text-decoration: none;
+  color: #000000;
+}
+
+a {
+  color: #000000;
+}

@@ -29,6 +29,10 @@ export class BookService {
     return this.http.get('http://localhost:8000/list/update/' + id);
   }
 
+  getBookByTitle(title: string | null): Observable<any> {
+    return this.http.get('http://localhost:8000/list/' + title);
+  }
+
   updateBook(book: Book) {
     this.http
       .put('http://localhost:8000/list/update', book)

@@ -5,13 +5,34 @@
   crossorigin="anonymous"
 />
 <div class="add-container">
-  <button
-    routerLink="/create"
-    type="button"
-    class="btn btn-primary btn-lg btn-block"
-  >
-    Add a Book
-  </button>
+  <div class="form-container">
+    <form class="form-inline">
+      <input
+        class="form-control mr-sm-2"
+        type="search"
+        placeholder="Enter the title to Search"
+        aria-label="Search"
+        name="searchTitle"
+        [(ngModel)]="searchTitle"
+      />
+      <button
+        (click)="searchBookByTitle()"
+        class="btn btn-outline-success my-2 my-sm-0"
+        type="submit"
+      >
+        Search
+      </button>
+    </form>
+  </div>
+  <div class="button-container">
+    <button
+      routerLink="/create"
+      type="button"
+      class="btn btn-primary btn-m add-btn"
+    >
+      Add a Book
+    </button>
+  </div>
 </div>
 
 <div class="table-container">

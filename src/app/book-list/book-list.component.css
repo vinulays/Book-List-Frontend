@@ -4,13 +4,42 @@
   margin: auto;
 }
 .add-container {
-  width: 50%;
+  width: 80%;
   margin: auto;
   margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
 }
 .btn {
   margin-right: 3px;
 }
+
+.add-btn {
+  width: 300px;
+}
 tbody td {
   vertical-align: middle;
+}
+
+/* 
+.add-container {
+  margin-left: 10%;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-container {
+  margin-right: 20px;
+}
+
+
+
+.button-container {
+  width: 300px;
+  margin-right: 11.1%;
+} */
+
+.form-inline input {
+  width: 300px;
 }

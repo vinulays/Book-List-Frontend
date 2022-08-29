@@ -10,6 +10,7 @@ import { BookService } from '../book.service';
 })
 export class BookListComponent implements OnInit {
   bookList: any;
+  searchTitle: string = '';
   constructor(private service: BookService) {}
 
   ngOnInit(): void {
@@ -27,6 +28,12 @@ export class BookListComponent implements OnInit {
     this.service.getBooks().subscribe((data) => {
       this.bookList = data;
       console.log(this.bookList);
+    });
+  }
+
+  searchBookByTitle() {
+    this.service.getBookByTitle(this.searchTitle).subscribe((data) => {
+      this.bookList = data;
     });
   }
 }
