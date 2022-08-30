@@ -4,6 +4,12 @@
   integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
   crossorigin="anonymous"
 />
+<link
+  rel="stylesheet"
+  href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+  integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+  crossorigin="anonymous"
+/>
 <div class="add-container">
   <div class="form-container">
     <form class="form-inline">
@@ -31,6 +37,14 @@
       class="btn btn-primary btn-m add-btn"
     >
       Add a Book
+    </button>
+    <button
+      (click)="logOut()"
+      routerLink=".."
+      type="button"
+      class="btn btn-danger"
+    >
+      Log out
     </button>
   </div>
 </div>

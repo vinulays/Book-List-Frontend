@@ -8,6 +8,8 @@ import { BookListComponent } from './book-list/book-list.component';
 import { BookService } from './book.service';
 import { BookCreateComponent } from './book-create/book-create.component';
 import { BookUpdateComponent } from './book-update/book-update.component';
+import { LoginComponent } from './login/login.component';
+import { UserService } from './user.service';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,7 @@ import { BookUpdateComponent } from './book-update/book-update.component';
     BookListComponent,
     BookCreateComponent,
     BookUpdateComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,7 +26,7 @@ import { BookUpdateComponent } from './book-update/book-update.component';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [BookService],
+  providers: [BookService, UserService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

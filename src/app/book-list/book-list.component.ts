@@ -17,6 +17,10 @@ export class BookListComponent implements OnInit {
     this.getBooks();
   }
 
+  logOut() {
+    localStorage.removeItem('token');
+  }
+
   deleteBook(id: number) {
     this.service.deleteBook(id).subscribe((data) => {
       console.log('Delete success');
