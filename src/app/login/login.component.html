@@ -31,6 +31,7 @@
               placeholder="Email or login"
               type="email"
               [(ngModel)]="user.email"
+              autocomplete="username"
             />
           </div>
         </div>
@@ -46,6 +47,7 @@
               placeholder="Password"
               type="password"
               [(ngModel)]="user.password"
+              autocomplete="current-password"
             />
           </div>
         </div>
@@ -60,7 +62,9 @@
           </button>
         </div>
 
-        <p class="text-center"><a href="#" class="btn">Forgot password?</a></p>
+        <p class="text-center">
+          Dont have an Account? &nbsp;<a routerLink="create">Create Here.</a>
+        </p>
       </form>
     </article>
   </div>

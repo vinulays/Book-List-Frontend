@@ -1,0 +1,17 @@
+.form-container {
+  width: 40%;
+  margin: auto;
+}
+
+form {
+  margin-top: 80px;
+}
+
+label::after {
+  content: "*";
+  color: red;
+}
+
+.btn {
+  margin-right: 10px;
+}

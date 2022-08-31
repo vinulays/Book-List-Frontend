@@ -10,6 +10,7 @@ import { BookCreateComponent } from './book-create/book-create.component';
 import { BookUpdateComponent } from './book-update/book-update.component';
 import { LoginComponent } from './login/login.component';
 import { UserService } from './user.service';
+import { UserCreateComponent } from './user-create/user-create.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { UserService } from './user.service';
     BookCreateComponent,
     BookUpdateComponent,
     LoginComponent,
+    UserCreateComponent,
   ],
   imports: [
     BrowserModule,

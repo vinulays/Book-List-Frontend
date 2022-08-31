@@ -5,6 +5,7 @@ import { BookCreateComponent } from './book-create/book-create.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { BookUpdateComponent } from './book-update/book-update.component';
 import { LoginComponent } from './login/login.component';
+import { UserCreateComponent } from './user-create/user-create.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+  },
+  {
+    path: 'login/create',
+    component: UserCreateComponent,
   },
   { path: 'list', component: BookListComponent, canActivate: [AuthGuard] },
   { path: 'create', component: BookCreateComponent, canActivate: [AuthGuard] },

@@ -12,4 +12,8 @@ export class UserService {
   login(user: User): Observable<Object> {
     return this.http.post('http://localhost:8000/login', user);
   }
+
+  createUser(user: User): Observable<Object> {
+    return this.http.post('http://localhost:8000/login/create', user);
+  }
 }
