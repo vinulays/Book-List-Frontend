@@ -16,8 +16,14 @@ export class BookCreateComponent implements OnInit {
     title: new FormControl('', [Validators.required]),
     author: new FormControl('', [Validators.required]),
     isbn: new FormControl('', [Validators.required]),
-    pages: new FormControl('', [Validators.required]),
-    price: new FormControl('', [Validators.required]),
+    pages: new FormControl('', [
+      Validators.required,
+      Validators.pattern('^-?[0-9]\\d*(\\.\\d{1,2})?$'),
+    ]),
+    price: new FormControl('', [
+      Validators.required,
+      Validators.pattern('^-?[0-9]\\d*(\\.\\d{1,2})?$'),
+    ]),
   });
 
   constructor(private service: BookService) {}

@@ -35,6 +35,20 @@
         placeholder="Enter Book Title"
         formControlName="title"
       />
+      <div
+        class="feedback"
+        *ngIf="
+          form.controls['title'].invalid &&
+          (form.controls['title'].dirty || form.controls['title'].touched)
+        "
+      >
+        <div
+          class="feedback-details"
+          *ngIf="form.controls['title'].errors?.['required']"
+        >
+          <small>Please enter the book title</small>
+        </div>
+      </div>
     </div>
     <div class="form-group">
       <label for="bookAuthor">Book Author</label>
@@ -45,6 +59,15 @@
         placeholder="Enter Book Author"
         formControlName="author"
       />
+      <div
+        class="feedback"
+        *ngIf="
+          form.controls['author'].invalid &&
+          (form.controls['author'].dirty || form.controls['author'].touched)
+        "
+      >
+        <small>Please enter the book author</small>
+      </div>
     </div>
     <div class="form-group">
       <label for="isbn">ISBN Number</label>
@@ -55,6 +78,15 @@
         placeholder="Enter ISBN Number"
         formControlName="isbn"
       />
+      <div
+        class="feedback"
+        *ngIf="
+          form.controls['isbn'].invalid &&
+          (form.controls['isbn'].dirty || form.controls['isbn'].touched)
+        "
+      >
+        <small>Please enter the isbn number</small>
+      </div>
     </div>
     <div class="form-group">
       <label for="noOfPages">No of Pages</label>
@@ -65,6 +97,26 @@
         placeholder="Enter number of pages"
         formControlName="pages"
       />
+      <div
+        class="feedback"
+        *ngIf="
+          form.controls['pages'].invalid &&
+          (form.controls['pages'].dirty || form.controls['pages'].touched)
+        "
+      >
+        <div
+          class="feedback-details"
+          *ngIf="form.controls['pages'].errors?.['required']"
+        >
+          <small>Please enter the no of pages</small>
+        </div>
+        <div
+          class="feedback-details"
+          *ngIf="form.controls['pages'].errors?.['pattern']"
+        >
+          <small>No of pages should be a number</small>
+        </div>
+      </div>
     </div>
 
     <div class="form-group">
@@ -76,6 +128,27 @@
         placeholder="Enter the price"
         formControlName="price"
       />
+      <div
+        class="feedback"
+        *ngIf="
+          form.controls['price'].invalid &&
+          (form.controls['price'].dirty || form.controls['price'].touched)
+        "
+      >
+        <div
+          class="feedback-details"
+          *ngIf="form.controls['price'].errors?.['required']"
+        >
+          <small>Please enter the price</small>
+        </div>
+
+        <div
+          class="feedback-details"
+          *ngIf="form.controls['price'].errors?.['pattern']"
+        >
+          <small>Price should be a number</small>
+        </div>
+      </div>
     </div>
 
     <button

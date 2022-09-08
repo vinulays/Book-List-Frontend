@@ -15,3 +15,7 @@ label::after {
 .btn {
   margin-right: 10px;
 }
+
+.feedback {
+  color: red;
+}

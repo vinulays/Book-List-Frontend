@@ -24,7 +24,7 @@
 </div>
 
 <div class="form-container">
-  <form #form="ngForm" (ngSubmit)="updateBook()">
+  <form [formGroup]="form" (ngSubmit)="updateBook()" novalidate>
     <div class="form-group">
       <label for="bookName">Book Title</label>
       <input
@@ -33,8 +33,19 @@
         name="bookName"
         aria-describedby="emailHelp"
         placeholder="Enter Book Title"
-        [(ngModel)]="book.title"
+        formControlName="title"
+        required
       />
+
+      <div
+        class="feedback"
+        *ngIf="
+          form.controls['title'].invalid &&
+          (form.controls['title'].dirty || form.controls['title'].touched)
+        "
+      >
+        <small>Please enter the book title</small>
+      </div>
     </div>
     <div class="form-group">
       <label for="bookAuthor">Book Author</label>
@@ -43,8 +54,19 @@
         class="form-control"
         name="bookAuthor"
         placeholder="Enter Book Author"
-        [(ngModel)]="book.author"
+        formControlName="author"
+        required
       />
+
+      <div
+        class="feedback"
+        *ngIf="
+          form.controls['author'].invalid &&
+          (form.controls['author'].dirty || form.controls['author'].touched)
+        "
+      >
+        <small>Please enter the book author</small>
+      </div>
     </div>
     <div class="form-group">
       <label for="isbn">ISBN Number</label>
@@ -53,8 +75,18 @@
         class="form-control"
         name="isbn"
         placeholder="Enter ISBN Number"
-        [(ngModel)]="book.isbn_number"
+        formControlName="isbn"
+        required
       />
+      <div
+        class="feedback"
+        *ngIf="
+          form.controls['isbn'].invalid &&
+          (form.controls['isbn'].dirty || form.controls['isbn'].touched)
+        "
+      >
+        <small>Please enter the isbn number</small>
+      </div>
     </div>
     <div class="form-group">
       <label for="noOfPages">No of Pages</label>
@@ -63,8 +95,29 @@
         class="form-control"
         name="noOfPages"
         placeholder="Enter number of pages"
-        [(ngModel)]="book.no_of_pages"
+        formControlName="pages"
+        required
       />
+      <div
+        class="feedback"
+        *ngIf="
+          form.controls['pages'].invalid &&
+          (form.controls['pages'].dirty || form.controls['pages'].touched)
+        "
+      >
+        <div
+          class="feedback-details"
+          *ngIf="form.controls['pages'].errors?.['required']"
+        >
+          <small>Please enter the no of pages</small>
+        </div>
+        <div
+          class="feedback-details"
+          *ngIf="form.controls['pages'].errors?.['pattern']"
+        >
+          <small>No of pages should be a number</small>
+        </div>
+      </div>
     </div>
 
     <div class="form-group">
@@ -74,11 +127,37 @@
         class="form-control"
         name="price"
         placeholder="Enter the price"
-        [(ngModel)]="book.price"
+        formControlName="price"
+        required
       />
+      <div
+        class="feedback"
+        *ngIf="
+          form.controls['price'].invalid &&
+          (form.controls['price'].dirty || form.controls['price'].touched)
+        "
+      >
+        <div
+          class="feedback-details"
+          *ngIf="form.controls['price'].errors?.['required']"
+        >
+          <small>Please enter the price</small>
+        </div>
+
+        <div
+          class="feedback-details"
+          *ngIf="form.controls['price'].errors?.['pattern']"
+        >
+          <small>Price should be a number</small>
+        </div>
+      </div>
     </div>
 
-    <button type="submit" class="btn btn-primary btn-lg btn-block">
+    <button
+      type="submit"
+      class="btn btn-primary btn-lg btn-block"
+      [disabled]="!form.valid"
+    >
       Update the Book
     </button>
     <button
