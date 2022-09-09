@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { tick } from '@angular/core/testing';
 import { Router } from '@angular/router';
+import { map, Observable, shareReplay, timer } from 'rxjs';
 import { Book } from '../Book';
 import { BookService } from '../book.service';
 
@@ -11,6 +13,14 @@ import { BookService } from '../book.service';
 export class BookListComponent implements OnInit {
   bookList: any;
   searchTitle: string = '';
+  noOfBooks!: number;
+  averagePrice!: number;
+  listLength!: number;
+  time: Observable<Date> = timer(0, 1000).pipe(
+    map((tick) => new Date()),
+    shareReplay(1)
+  );
+
   constructor(private service: BookService) {}
 
   ngOnInit(): void {
@@ -32,12 +42,31 @@ export class BookListComponent implements OnInit {
     this.service.getBooks().subscribe((data) => {
       this.bookList = data;
       console.log(this.bookList);
+      this.noOfBooks = this.bookList.length;
+      this.listLength = data.length;
+      this.calculateAveragePrice();
     });
+  }
+
+  calculateAveragePrice() {
+    var total: number = 0;
+    for (let i = 0; i < this.bookList.length; i++) {
+      total += this.bookList[i].price;
+    }
+
+    this.averagePrice = total / this.bookList.length;
   }
 
   searchBookByTitle() {
     this.service.getBookByTitle(this.searchTitle).subscribe((data) => {
       this.bookList = data;
+      this.listLength = data.length;
     });
+  }
+
+  restoreList() {
+    if (this.searchTitle == '') {
+      this.getBooks();
+    }
   }
 }

@@ -1,10 +1,15 @@
 .form-container {
-  width: 40%;
+  width: 30%;
   margin: auto;
 }
 
 form {
-  margin-top: 80px;
+  margin-top: 55px;
+}
+
+h2 {
+  margin-top: 60px;
+  text-align: center;
 }
 
 label::after {
@@ -18,4 +23,12 @@ label::after {
 
 .feedback {
   color: red;
+}
+
+.create-btn {
+  border-radius: 17px;
+}
+
+.back-btn {
+  border-radius: 17px;
 }

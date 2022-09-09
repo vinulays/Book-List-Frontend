@@ -4,7 +4,9 @@
   integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
   crossorigin="anonymous"
 />
-
+<div class="header-container">
+  <h2>Enter Book details.</h2>
+</div>
 <div
   *ngIf="isSubmitted"
   class="alert alert-success alert-dismissible"
@@ -154,7 +156,7 @@
     <button
       type="submit"
       [disabled]="!form.valid"
-      class="btn btn-primary btn-lg btn-block"
+      class="btn btn-primary btn-lg btn-block add-btn"
     >
       Add the Book
     </button>

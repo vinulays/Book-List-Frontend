@@ -4,6 +4,7 @@
   integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
   crossorigin="anonymous"
 />
+<h2>Get started here.</h2>
 <div
   *ngIf="isSubmitted"
   class="alert alert-success alert-dismissible"
@@ -23,6 +24,46 @@
 </div>
 <div class="form-container">
   <form [formGroup]="form">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Firstname</label>
+      <input
+        type="text"
+        class="form-control"
+        aria-describedby="emailHelp"
+        name="email"
+        formControlName="firstname"
+        required
+      />
+      <div
+        class="feedback"
+        *ngIf="
+          form.controls['firstname'].invalid &&
+          (form.controls['firstname'].dirty ||
+            form.controls['firstname'].touched)
+        "
+      >
+        <small>Firstname is required</small>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="lastname">Lastname</label>
+      <input
+        type="text"
+        class="form-control"
+        name="firstname"
+        required
+        formControlName="lastname"
+      />
+      <div
+        class="feedback"
+        *ngIf="
+          form.controls['lastname'].invalid &&
+          (form.controls['lastname'].dirty || form.controls['lastname'].touched)
+        "
+      >
+        <small>Lastname is required</small>
+      </div>
+    </div>
     <div class="form-group">
       <label for="exampleInputEmail1">Email address</label>
       <input
@@ -69,16 +110,19 @@
         <small>Password is required</small>
       </div>
     </div>
-    <button
-      (click)="createUser()"
-      type="submit"
-      class="btn btn-primary"
-      [disabled]="!form.valid"
-    >
-      Create Account
-    </button>
-    <button routerLink=".." type="button" class="btn btn-secondary">
-      Back
-    </button>
+
+    <div class="form-group">
+      <button
+        (click)="createUser()"
+        type="submit"
+        class="btn btn-primary create-btn"
+        [disabled]="!form.valid"
+      >
+        Create Account
+      </button>
+      <button routerLink=".." type="button" class="btn btn-secondary back-btn">
+        Back
+      </button>
+    </div>
   </form>
 </div>

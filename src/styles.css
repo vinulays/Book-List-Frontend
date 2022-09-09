@@ -7,3 +7,7 @@ body {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif !important;
+}

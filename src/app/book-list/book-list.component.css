@@ -1,8 +1,28 @@
-.table-container {
-  margin-top: 30px !important;
+.table-wrapper {
+  margin-top: 40px !important;
   width: 80%;
   margin: auto;
+
+  border-radius: 10px;
+  background-color: #fff;
 }
+.table-container {
+  padding: 10px;
+  border: 1px solid #efefef;
+  border-radius: 15px;
+}
+.table-container h4 {
+  padding: 5px;
+}
+.table-container table {
+  font-size: 15px;
+}
+.table-container table th,
+td {
+  border-top: none;
+  font-weight: normal;
+}
+
 .add-container {
   width: 80%;
   margin: auto;
@@ -21,25 +41,67 @@ tbody td {
   vertical-align: middle;
 }
 
-/* 
-.add-container {
-  margin-left: 10%;
-  margin-top: 30px;
-  display: flex;
-  justify-content: space-between;
+.search-input {
+  border-radius: 17px;
 }
 
-.form-container {
-  margin-right: 20px;
+.search-btn {
+  border-radius: 17px;
 }
-
-
-
-.button-container {
-  width: 300px;
-  margin-right: 11.1%;
-} */
 
 .form-inline input {
   width: 300px;
+}
+.add-btn {
+  border-radius: 17px;
+  background-color: #4f95d0;
+}
+
+.add-btn:hover {
+  background-color: #1f244a;
+}
+.logout-btn {
+  border-radius: 17px;
+}
+
+.dashboard-container {
+  width: 50%;
+  height: 200px;
+  margin: auto;
+  margin-top: 20px;
+
+  background-color: #4f95d0;
+  border-radius: 30px;
+}
+
+.dashboard-content {
+  padding: 10px;
+}
+.dashboard-content h2 {
+  text-align: center;
+}
+
+.booksno-container {
+  padding: 20px;
+}
+
+.overview-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.average-price-container {
+  padding: 20px;
+}
+
+.time-container {
+  padding: 20px;
+}
+
+.update-btn {
+  background-color: #4f95d0;
+}
+
+.update-btn:hover {
+  background-color: #1f244a;
 }

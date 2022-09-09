@@ -10,21 +10,20 @@
   integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
   crossorigin="anonymous"
 />
-
+<div class="login-image">
+  <img class="login-img" src="../../assets/login.jpg" alt="" />
+</div>
 <div class="login-container">
-  <div class="card">
+  <div class="card-container">
     <article class="card-body">
       <h4 class="card-title text-center mb-4 mt-1">Sign in</h4>
-      <hr />
+
       <p *ngIf="!isCredentialsCorrect" class="text-danger text-center">
         Username or Password is Wrong
       </p>
       <form>
         <div class="form-group">
           <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-            </div>
             <input
               name="email"
               class="form-control"
@@ -38,9 +37,6 @@
 
         <div class="form-group">
           <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-            </div>
             <input
               name="password"
               class="form-control"
@@ -56,7 +52,7 @@
           <button
             (click)="login()"
             type="submit"
-            class="btn btn-primary btn-block"
+            class="btn btn-primary btn-block loginBtn"
           >
             Login
           </button>
