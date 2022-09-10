@@ -32,3 +32,14 @@ label::after {
 .back-btn {
   border-radius: 17px;
 }
+
+.button-group {
+  margin-top: 20px;
+}
+
+.login-container a {
+  text-decoration: none;
+}
+.login-container a:hover {
+  color: #000;
+}
