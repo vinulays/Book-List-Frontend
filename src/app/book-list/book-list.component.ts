@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { map, Observable, shareReplay, timer } from 'rxjs';
 import { Book } from '../Book';
 import { BookService } from '../book.service';
+import { User } from '../User';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-book-list',
@@ -16,12 +18,13 @@ export class BookListComponent implements OnInit {
   noOfBooks!: number;
   averagePrice!: number;
   listLength!: number;
+
   time: Observable<Date> = timer(0, 1000).pipe(
     map((tick) => new Date()),
     shareReplay(1)
   );
 
-  constructor(private service: BookService) {}
+  constructor(private service: BookService, private userService: UserService) {}
 
   ngOnInit(): void {
     this.getBooks();

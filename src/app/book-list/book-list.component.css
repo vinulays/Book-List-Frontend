@@ -1,3 +1,35 @@
+.navbar-container li {
+  list-style-type: none;
+}
+
+.navbar-container li h5 {
+  font-weight: bold;
+}
+.navbar-container nav {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.navbar-right {
+  margin-right: 30px;
+  margin-top: 10px;
+}
+nav .logout {
+  background-color: #000;
+  color: white;
+  font-size: 13px;
+  padding: 6px 14px 6px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+nav .logout:hover {
+  background-color: #1f244a;
+  transition: 0.1s;
+}
+.navbar-left {
+  margin-left: 10px;
+}
+
 .table-wrapper {
   margin-top: 40px !important;
   width: 80%;
@@ -35,7 +67,15 @@ td {
 }
 
 .add-btn {
-  width: 300px;
+  width: 200px;
+  border-radius: 17px;
+  background-color: #000;
+  font-size: 14px;
+  border: none;
+}
+
+.add-btn:hover {
+  background-color: #1f244a;
 }
 tbody td {
   vertical-align: middle;
@@ -43,34 +83,32 @@ tbody td {
 
 .search-input {
   border-radius: 17px;
+  font-size: 14px;
 }
 
 .search-btn {
   border-radius: 17px;
+  font-size: 14px;
+  background-color: #000;
+  color: #fff;
 }
-
+.search-btn:hover {
+  background-color: #1f244a;
+}
 .form-inline input {
   width: 300px;
 }
-.add-btn {
-  border-radius: 17px;
-  background-color: #4f95d0;
-}
 
-.add-btn:hover {
-  background-color: #1f244a;
-}
 .logout-btn {
   border-radius: 17px;
 }
 
 .dashboard-container {
   width: 50%;
-  height: 200px;
+  height: 160px;
   margin: auto;
   margin-top: 20px;
-
-  background-color: #4f95d0;
+  border: 1px solid #efefef;
   border-radius: 30px;
 }
 
@@ -86,6 +124,9 @@ tbody td {
 }
 
 .overview-container {
+  width: 100%;
+  position: relative;
+  margin: auto;
   display: flex;
   justify-content: space-around;
 }
@@ -100,8 +141,13 @@ tbody td {
 
 .update-btn {
   background-color: #4f95d0;
+  font-size: 14px;
 }
 
 .update-btn:hover {
   background-color: #1f244a;
+}
+
+.delete-btn {
+  font-size: 14px;
 }

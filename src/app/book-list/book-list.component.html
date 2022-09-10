@@ -10,10 +10,25 @@
   integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
   crossorigin="anonymous"
 />
-
+<div class="navbar-container">
+  <nav>
+    <div class="navbar-left">
+      <li>
+        <h5>Welcome to Book Management System🎉</h5>
+        <p>Here's what's happening in your book list today.</p>
+      </li>
+    </div>
+    <div class="navbar-right">
+      <div class="btn-container">
+        <button routerLink=".." (cilck)="logOut()" class="logout">
+          Logout
+        </button>
+      </div>
+    </div>
+  </nav>
+</div>
 <div class="dashboard-container">
   <div class="dashboard-content">
-    <h2>Welcome!</h2>
     <div class="overview-container">
       <div class="booksno-container">
         <div class="logo">
@@ -110,14 +125,6 @@
     >
       Add a Book
     </button>
-    <button
-      (click)="logOut()"
-      routerLink=".."
-      type="button"
-      class="btn btn-secondary logout-btn"
-    >
-      Log out
-    </button>
   </div>
 </div>
 
@@ -152,7 +159,7 @@
             </button>
             <button
               type="button"
-              class="btn btn-danger"
+              class="btn btn-danger delete-btn"
               (click)="deleteBook(book.id)"
             >
               Delete
