@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
       if (data == null) {
         this.isCredentialsCorrect = false;
       } else {
-        localStorage.setItem(
+        sessionStorage.setItem(
           'token',
           'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsIm5hbWUiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE1MTYyMzkwMjJ9.I2l85RsRwKJ8gsKPp2nDtjf2orjNLhiUax6uHTCKpyc'
         );

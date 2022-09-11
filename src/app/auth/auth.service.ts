@@ -7,6 +7,6 @@ export class AuthService {
   constructor() {}
 
   isAuthenticated() {
-    return !!localStorage.getItem('token');
+    return !!sessionStorage.getItem('token');
   }
 }

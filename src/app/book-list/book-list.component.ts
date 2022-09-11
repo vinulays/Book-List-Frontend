@@ -31,7 +31,7 @@ export class BookListComponent implements OnInit {
   }
 
   logOut() {
-    localStorage.removeItem('token');
+    sessionStorage.removeItem('token');
   }
 
   deleteBook(id: number) {

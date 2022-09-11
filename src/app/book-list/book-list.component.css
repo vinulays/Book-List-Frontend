@@ -54,7 +54,24 @@ td {
   border-top: none;
   font-weight: normal;
 }
-
+.title-column {
+  width: 350px;
+}
+.author-column {
+  width: 250px;
+}
+.isbn-column {
+  width: 150px;
+}
+.pages-column {
+  width: 110px;
+}
+.price-column {
+  width: 100px;
+}
+.action-column {
+  width: 200px;
+}
 .add-container {
   width: 80%;
   margin: auto;
