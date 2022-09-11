@@ -26,3 +26,7 @@ h2 {
 .btn-block {
   border-radius: 23px;
 }
+
+.btn-m {
+  height: 45px;
+}
