@@ -15,7 +15,7 @@
   margin-top: 10px;
 }
 nav .logout {
-  background-color: #000;
+  background-color: #1d1b26;
   color: white;
   font-size: 13px;
   padding: 6px 14px 6px 14px;
@@ -86,7 +86,7 @@ td {
 .add-btn {
   width: 200px;
   border-radius: 17px;
-  background-color: #000;
+  background-color: #1d1b26;
   font-size: 14px;
   border: none;
 }
@@ -106,7 +106,7 @@ tbody td {
 .search-btn {
   border-radius: 17px;
   font-size: 14px;
-  background-color: #000;
+  background-color: #1d1b26;
   color: #fff;
 }
 .search-btn:hover {
